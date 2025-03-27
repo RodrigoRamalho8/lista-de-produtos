@@ -1,0 +1,6 @@
+.main-container{
+    width: 83vw;
+    height: calc(100vh-50px);
+    margin:0 auto;
+    margin-top: 150px;
+}
