@@ -1,1 +1,6 @@
 @import url(reset.css);
+@import url(components/navbar.css);
+
+:root{
+    font-family: "Tektur", sans-serif;
+}

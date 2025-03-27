@@ -1,0 +1,27 @@
+.navbar {
+    position: absolute;
+    top: 0;
+    height: 50px;
+    background-color: rgb(8, 194, 8);
+    width: 100vw;
+}
+
+.navbar-list {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar-list-item:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+
+}
+
+.navbar-list-item a {
+    text-decoration: none;
+    color: white;
+}
+
