@@ -1,10 +1,10 @@
 <?php
 
-    require_once('required/head.php');
+    require_once './required/head.php';
 
 ?>
 <body>
-    <?php require_once('view/components/navbar.php');?>
+    <?php require_once './view/components/navbar.php';?>
     <main class="main-container">
         <div class="main-container-conteudo">
             <div class="main-container-conteudo-titulo">
