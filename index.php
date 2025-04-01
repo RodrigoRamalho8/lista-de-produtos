@@ -1,8 +1,4 @@
-<?php
-
-    require_once './required/head.php';
-
-?>
+<?php require_once __DIR__ . '/view/components/head.php';?>
 <body>
     <?php require_once './view/components/navbar.php';?>
     <main class="main-container">

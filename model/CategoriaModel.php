@@ -23,7 +23,17 @@
             return $stmt->fetchAll();
 
         }
+
+        public function buscarPorID($id){
+
+            $query = "SELECT * FROM $this->tabela WHERE $this->tabela.ID = $id";
+
+            $stmt = $this->conn->prepare($query);
+            $stmt->execute();
+
+            return $stmt->fetchAll();
+
+        }
+
     }
-
-
 ?>
