@@ -14,10 +14,7 @@ if($_SERVER['REQUEST_METHOD'] === "GET"){
                 "ID" =>$_GET['ID']]);
         }
         catch (Exception){
-        ?>
-            <h1 style="text-align:center;" >Ocorreu algum erro</h1>
-            <button><a href="/lista-de-produtos/index.php">Voltar à página inicial</a></button>
-        <?php
+            return header("Location: erro-redirect.php");
         }
     }
 
