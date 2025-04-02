@@ -26,7 +26,7 @@
 
         public function buscarPorID($id){
 
-            $query = "SELECT * FROM $this->tabela WHERE $this->tabela.ID = $id";
+            $query = "SELECT * FROM $this->tabela WHERE ID = $id";
 
             $stmt = $this->conn->prepare($query);
             $stmt->execute();
@@ -35,5 +35,35 @@
 
         }
 
+        public function Adicionar($categoria){
+
+            $query = "INSERT INTO $this->tabela (DESC_CATEGORIA) VALUES (:nome)";
+
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindParam(":nome", $categoria['DESC_CATEGORIA']);
+            return $stmt->execute();
+
+        }
+
+        public function Editar($categoria){
+
+            $query = "UPDATE $this->tabela SET DESC_CATEGORIA = :nome WHERE ID = :id";
+
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindParam(":id", $categoria["ID"], PDO::PARAM_INT);
+            $stmt->bindParam(":nome", $categoria["DESC_CATEGORIA"]);
+            return  $stmt->execute();
+
+        }
+
+        public function Excluir($categoria){
+
+            $query = "DELETE FROM $this->tabela WHERE ID = :id";
+
+            $stmt = $this->conn->prepare($query);
+            $stmt->bindParam(":id", $categoria["ID"], PDO::PARAM_INT);
+            return $stmt->execute();
+
+        }
     }
 ?>

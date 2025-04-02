@@ -1,22 +1,31 @@
 <?php
 
-    if ($_SERVER["REQUEST_METHOD"] === "POST") {
-        if (isset($_POST["DESC_CATEGORIA"])) {
 
-            $categoriaModel = new Categoria($conn);
-            $categoriaModel->insert(
-                $_POST["DESC_CATEGORIA"]
-            );
+    require_once './../../model/CategoriaModel.php';
+
+
+    
+    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+        $categoriaModel = new CategoriaModel();
+        if (!empty($_POST['ID'])) {
+            $categoriaModel->Editar([
+                'ID' => (int) $_POST['ID'], 
+                'DESC_CATEGORIA' => $_POST['DESC_CATEGORIA']
+            ]);
+        }else{
+            $categoriaModel->Adicionar(['DESC_CATEGORIA' => $_POST['DESC_CATEGORIA']]);
         }
     }
 
 
-    require_once './../../model/CategoriaModel.php';
 
 ?>
 
 <?php
 
-    require_once './../components/navbar.php';
+    return header("Location: categorias.php");
 
 ?>
+
+

@@ -40,22 +40,28 @@
                     <h2 class="titulo-formulario">Editar produto</h2>
                 </div>
                 <div class="div-dados-formulario">
-                    <!-- <?php print_r($categoria[0]['ID']) ?> -->
-
                     <label for="id">ID:</label>
-                    <input type="number" value="<?php echo $categoria[0]['ID']?>" disabled>
+                    <input readonly name="ID" type="number" value="<?php echo $categoria[0]['ID']?>" >
 
                     <label for="desc">Descrição:</label>
-                    <input type="text" class="input-desc-formulario" value=" <?php echo $categoria[0]['DESC_CATEGORIA'] ?>">
+                    <input name="DESC_CATEGORIA" type="text" class="input-desc-formulario" value=" <?php echo $categoria[0]['DESC_CATEGORIA'] ?>">
                 </div>
 
-                <div class="div-botao-enviar-formulario">
-                    <button>teste</button>
-                </div>
             <?php } else { ?>
-                <h2>Adicionar produto</h2>
-            <?php } ?>
+                <div class="div-titulo-formulario">
+                    <h2 class="titulo-formulario">Adicionar produto</h2>
+                </div>
 
+                <div class="div-dados-formulario">
+                    <label for="desc" class="label-nome-categoria">Descrição</label>
+                    <input name="DESC_CATEGORIA" type="text" class="input-desc-formulario">
+                </div>
+            <?php } ?>  
+
+            <div class="div-botao-enviar-formulario">
+                <button class="submit-form-categoria" type="submit">Enviar</button>                    
+            </div>
+           
 
         </form>
 

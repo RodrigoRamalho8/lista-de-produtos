@@ -24,7 +24,7 @@
         </div>
         <div class="main-container-botao-add-categoria">
             <button>
-                +
+                <a href="/lista-de-produtos/view/pages/categoria.php">+</a>
             </button>
         </div>
 
@@ -42,13 +42,28 @@
                             <td class="main-container-conteudo-tabela-corpo-item"><?= $item['DESC_CATEGORIA'] ?></td>
                             <td class="main-container-conteudo-tabela-corpo-acao">
                                 <button><a href="/lista-de-produtos/view/pages/categoria.php?ID=<?php echo $item['ID']?>">Acessar</a></button>
-                                <a href="#">Excluir</a>
+                                <button class="botao-excluir-categoria" ><a href="/lista-de-produtos/view/pages/categoria_excluir.php?ID=<?php echo $item['ID']?>">Excluir</a></button>
                             </td>
                         </form>                   
                     </tr>
                 <?php }?>
             </tbody>
         </table>
+
+        <dialog  class="dialog-generica">    <!-- open="open" -->
+                <div class="titulo-dialog">
+                    <span>Atenção</span>
+                </div>
+
+                <div class="conteudo-dialog">
+                    <span>Tem certeza que deseja escluir a categoria XXXXX?</span>
+                </div>
+
+                <div class="botoes-dialog">
+                    <button>Cancelar</button>
+                    <button>Excluir</button>
+                </div>
+        </dialog>
 
     </main>
 
