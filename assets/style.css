@@ -4,6 +4,7 @@
 @import url('components/dialog.css');
 @import url('pages/index.css');
 @import url('pages/categorias.css');
+@import url('pages/erro-redirect.css');
 
 :root{
     font-family: "Tektur", sans-serif;

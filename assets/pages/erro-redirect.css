@@ -1,0 +1,43 @@
+.main-container-conteudo-erro{
+    height: calc(100vh - 230px);
+    width: 100%;
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.titulo-erro-generico{
+    font-size:50px;
+    padding: 20px;
+}
+
+.anchor-botao-erro-pagina-inicial{
+    text-decoration: none;
+    margin: 20px;
+
+}
+
+.botao-erro-pagina-inicial{
+
+    border: none;
+    background-color: rgb(8, 194, 8);
+    height: 50px;
+    width: 300px;
+    border-radius: 25px;
+    cursor:pointer;
+    font-size: 20px;
+    color: white;
+
+
+}
+
+.botao-erro-pagina-inicial:hover{
+
+    transform: scale(1.2);
+    color: black;
+    box-shadow: 5px 15px 5px black;
+
+}
