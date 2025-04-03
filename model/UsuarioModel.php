@@ -1,6 +1,6 @@
 <?php
 
-require_once "/lista-de-produtos/config/database.php"
+require_once "./../../config/database.php";
 
     class UsuarioModel {
 
@@ -15,7 +15,7 @@ require_once "/lista-de-produtos/config/database.php"
 
         public function Listar(){
 
-            $query = "SELECT * FROM $this->tabela";
+            $query = "SELECT U.ID, U.CPF, U.NOME, U.DT_NASCIMENTO, U.EMAIL, G.DESC_GENERO, U.TELEFONE FROM $this->tabela U JOIN GENEROS G ON U.ID_GENERO = G.ID";
 
             $stmt=$this->conn->prepare($query);
             $stmt->execute();
