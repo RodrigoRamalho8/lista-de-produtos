@@ -1,6 +1,6 @@
 <?php
 
-require_once './../../model/CategoriaModel.php';
+require_once './../../model/UsuarioModel.php';
 
 
 
@@ -8,9 +8,9 @@ require_once './../../model/CategoriaModel.php';
 
 if($_SERVER['REQUEST_METHOD'] === "GET"){
     if(isset($_GET['ID'])){
-        $categoriaModel = new CategoriaModel();
+        $usuarioModel = new UsuarioModel();
         try{
-            $categoriaModel->Excluir([
+            $usuarioModel->Excluir([
                 "ID" =>$_GET['ID']]);
         }
         catch (Exception){
@@ -19,5 +19,5 @@ if($_SERVER['REQUEST_METHOD'] === "GET"){
     }
 
 }
-    return header("Location: categorias.php");
+    return header("Location: usuarios.php");
 ?>
