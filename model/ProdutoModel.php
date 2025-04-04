@@ -1,8 +1,8 @@
 <?php
 
-    require_once "./../config/database.php";
+    require_once "./../../config/database.php";
 
-    class ProdutosModel {
+    class ProdutoModel {
 
         private $conn;
 
@@ -22,7 +22,7 @@
             $query = "SELECT P.ID, P.NOME, P.PRECO, P.DESCRICAO, C.DESC_CATEGORIA FROM $this->tabela P JOIN CATEGORIA C ON P.ID_CATEGORIA = C.ID";
 
             $stmt = $this->conn->prepare($query);
-            $stmt = execute();
+            $stmt->execute();
 
             return $stmt->fetchAll();
 
@@ -30,6 +30,8 @@
         }
 
         public function BuscarPorID($id){
+
+            // var_dump($id);
 
             $query = "SELECT P.ID, P.NOME, P.PRECO, P.DESCRICAO, C.DESC_CATEGORIA FROM $this->tabela P JOIN CATEGORIA C ON P.ID_CATEGORIA = C.ID WHERE P.ID = :ID";
 
