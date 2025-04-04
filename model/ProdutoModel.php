@@ -46,12 +46,12 @@
 
         public function Adicionar($produto){
 
-            $query = "INSERT INTO $this->tabela (NOME, PRECO, DESCRICAO, ID_CATEGORIA) VALUES (:NOME, :PRECO, :DESCRICAO, :ID_CATEGORIA) ";
+            $query = "INSERT INTO $this->tabela (NOME, PRECO, DESCRICAO, ID_CATEGORIA) VALUES (:NOME, :PRECO, :DESCRICAO, :ID_CATEGORIA)";
 
             $stmt = $this->conn->prepare($query);
             $stmt->bindParam(":NOME", $produto["NOME"]);
             $stmt->bindParam(":PRECO", $produto["PRECO"]);
-            $stmt->bindParam(":dESCRICAO", $produto["DESCRICAO"]);
+            $stmt->bindParam(":DESCRICAO", $produto["DESCRICAO"]);
             $stmt->bindParam(":ID_CATEGORIA", $produto["ID_CATEGORIA"]);
 
             return $stmt->execute();
@@ -64,7 +64,7 @@
             $stmt = $this->conn->prepare($query);
             $stmt->bindParam(":ID", $produto["ID"]);
             $stmt->bindParam(":NOME", $produto["NOME"]);
-            $stmt->bindParam(":PRECO", $produto["PRECO"]);
+            $stmt->bindParam(":PRECO", $produto["PRECO"], PDO::PARAM_FLOAT);
             $stmt->bindParam(":DESCRICAO", $produto["DESCRICAO"]);
             $stmt->bindParam(":ID_CATEGORIA", $produto["ID_CATEGORIA"]);
 

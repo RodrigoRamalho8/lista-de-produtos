@@ -66,7 +66,7 @@
                             <label for="ID_CATEGORIA">Categoria:</label>
                             <select name="ID_CATEGORIA" id="" class="select-produto-categoria">
                                 <?php foreach($categorias as $categoria){ ?>
-                                <option value=" <?php echo $categoria["DESC_CATEGORIA"]?>"> <?php echo $categoria["DESC_CATEGORIA"] ?> </option>
+                                <option value=" <?php echo $categoria["ID"]?>"> <?php echo $categoria["DESC_CATEGORIA"] ?> </option>
                                     <?php } ?>
                             </select>
 
@@ -88,8 +88,8 @@
                     <label for="descricao">Descricao:</label>
                     <input name="DESCRICAO" type="text" class="input-descricao-formulario" value="">
 
-                    <label for="categoria">Categoria:</label>
-                    <select name="CATEGORIA" id="" class="select-categoria-formulario">
+                    <label for="ID_CATEGORIA">Categoria:</label>
+                    <select name="ID_CATEGORIA" id="" class="select-categoria-formulario">
 
                         <?php foreach($categorias as $categoria) { ?>
 
