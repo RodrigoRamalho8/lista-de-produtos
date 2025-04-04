@@ -55,7 +55,7 @@
                             <td class="main-container-conteudo-tabela-corpo-item"><?= $produto['DESC_CATEGORIA'] ?></td>
                             <td class="main-container-conteudo-tabela-corpo-acao">
                                 <button><a href="/lista-de-produtos/view/pages/produto.php?ID=<?php echo $produto['ID']?>">Acessar</a></button>
-                                <button class="botao-excluir-categoria" ><a href="/lista-de-produtos/view/pages/produto_excluir.php?ID=<?php echo $item['ID']?>">Excluir</a></button>
+                                <button class="botao-excluir-produto" ><a href="/lista-de-produtos/view/pages/produto_excluir.php?ID=<?php echo $produto['ID']?>">Excluir</a></button>
                             </td>
                         </form>                   
                     </tr>
