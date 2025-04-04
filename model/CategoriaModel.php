@@ -26,9 +26,10 @@
 
         public function buscarPorID($id){
 
-            $query = "SELECT * FROM $this->tabela WHERE ID = $id";
+            $query = "SELECT * FROM $this->tabela WHERE ID = :ID";
 
             $stmt = $this->conn->prepare($query);
+            $stmt->bindParam(":ID", $id);
             $stmt->execute();
 
             return $stmt->fetchAll();
